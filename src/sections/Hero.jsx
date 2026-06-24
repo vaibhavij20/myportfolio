@@ -8,14 +8,16 @@ export default function Hero() {
   const [leetcodeStats, setLeetcodeStats] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
+  const leetcodeUsername = hero.links.leetcode.split('/').pop() || 'vaibhavij20';
+
   useEffect(() => {
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), 10000);
 
     // Use local proxy in dev, Vercel serverless function in production
     const apiUrl = import.meta.env.DEV
-      ? `http://localhost:3001/api/leetcode/vaibhavij20`
-      : `/api/leetcode?username=vaibhavij20`;
+      ? `http://localhost:3001/api/leetcode/${leetcodeUsername}`
+      : `/api/leetcode?username=${leetcodeUsername}`;
 
     fetch(apiUrl, {
       signal: controller.signal,

@@ -8,8 +8,12 @@ export default function LeetCodeCard({ username = "vaibhavij20" }) {
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), 10000);
 
-    // Call local proxy server to bypass CORS
-    fetch(`http://localhost:3001/api/leetcode/${username}`, {
+    // Use local proxy in dev, serverless function in production
+    const apiUrl = import.meta.env.DEV
+      ? `http://localhost:3001/api/leetcode/${username}`
+      : `/api/leetcode?username=${username}`;
+
+    fetch(apiUrl, {
       signal: controller.signal,
     })
       .then(res => {

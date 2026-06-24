@@ -32,6 +32,9 @@ app.get('/api/leetcode/:username', async (req, res) => {
         'Content-Type': 'application/json'
       }
     });
+    if (!response.data || !response.data.data || !response.data.data.matchedUser) {
+      return res.status(404).json({ success: false, error: 'User not found on LeetCode' });
+    }
 
     const stats = response.data.data.matchedUser.submitStatsGlobal.acSubmissionNum;
     res.json({ success: true, stats });
