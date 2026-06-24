@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { Award, Binary, ExternalLink, Activity } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
-import LeetCodeCard from '../components/LeetCodeCard';
 
 export default function Research() {
   const { research, certifications, github } = portfolioData;
@@ -101,21 +100,6 @@ export default function Research() {
         </div>
       </motion.div>
 
-      {/* LeetCode Live Stats */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.3 }}
-        className="space-y-4 pt-6"
-      >
-        <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-500 flex items-center gap-2">
-          <Activity size={16} /> LeetCode Live Telemetry
-        </h3>
-        <div className="max-w-[350px]">
-          <LeetCodeCard username="vaibhavij20" />
-        </div>
-      </motion.div>
     </section>
   );
 }
