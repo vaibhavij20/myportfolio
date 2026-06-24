@@ -19,7 +19,7 @@ export const portfolioData = {
 
   // Achievements
   achievements: [
-    "3rd Place Winner: Ranked 3rd out of hundreds of peer competitors in a highly competitive coding battle among 3rd-year students at VIT Chennai.",
+    "3rd Place Winner: Ranked 3rd out of hundreds of peer competitors in a highly competitive coding battle among students at VIT Chennai.",
     "Hackathon Finalist: Secured a spot as a Top 20 Finalist at Hack Night ’25, an elite inter-college hackathon championship."
   ],
 
@@ -31,7 +31,7 @@ export const portfolioData = {
     funFact: "Optimized satellite vision transformers achieving 93% R² prediction accuracy",
     timeline: [
       { year: "2023", title: "DSA Fundamentals", description: "Mastered core algorithms and data structures through competitive programming" },
-      { year: "2024", title: "Full-Stack Development", description: "Built production-ready web applications with React, Node.js, and\n\n## Production Deployment Options\n\n- **Project images are now integrated and visible in the Projects section.**\n\nmodern deployment pipelines" },
+      { year: "2024", title: "Full-Stack Development", description: "Built production-ready web applications with React, Node.js, and modern deployment pipelines" },
       { year: "2024", title: "AI/ML Integration", description: "Developed RAG systems, computer vision models, and multi-agent architectures" },
       { year: "2026", title: "Research Publication", description: "Submitting Vision Transformer research on cyclone tracking for peer review" },
       { year: "2026", title: "Advanced RAG Orchestrations", description: "Engineering multi-agent state charts and LangGraph-based autonomous systems" }
