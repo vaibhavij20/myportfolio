@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Award, Star, Trophy, ArrowRight } from "lucide-react";
+import { Award, Trophy } from "lucide-react";
 import { portfolioData } from "../data/portfolioData";
 
 export default function Achievements() {

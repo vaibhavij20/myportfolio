@@ -46,7 +46,7 @@ export default async function handler(req, res) {
 
   try {
     const data = await new Promise((resolve, reject) => {
-      const req = https.request(options, (lcRes) => {
+      const httpReq = https.request(options, (lcRes) => {
         let body = '';
         lcRes.on('data', (chunk) => { body += chunk; });
         lcRes.on('end', () => {
@@ -58,13 +58,13 @@ export default async function handler(req, res) {
         });
       });
 
-      req.on('error', reject);
-      req.setTimeout(9000, () => {
-        req.destroy();
+      httpReq.on('error', reject);
+      httpReq.setTimeout(9000, () => {
+        httpReq.destroy();
         reject(new Error('Request timed out'));
       });
-      req.write(query);
-      req.end();
+      httpReq.write(query);
+      httpReq.end();
     });
 
     if (!data?.data?.matchedUser) {
