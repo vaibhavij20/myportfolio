@@ -13,16 +13,9 @@ export const portfolioData = {
       { label: "LeetCode Solved", value: "58+", icon: "code" },
       { label: "Active Systems", value: "6+", icon: "cpu" },
       { label: "Research Papers", value: "1", icon: "file-text" },
-      { label: "Certifications", value: "2", icon: "award" }
+      { label: "Certifications", value: "3", icon: "award" }
     ]
   },
-
-  // Achievements
-  achievements: [
-    "3rd Place Winner: Ranked 3rd out of hundreds of peer competitors in a highly competitive coding battle among students at VIT Chennai.",
-    "Hackathon Finalist: Secured a spot as a Top 20 Finalist at Hack Night ’25, an elite inter-college hackathon championship."
-  ],
-
   about: {
     university: "Vellore Institute of Technology (VIT)",
     focus: ["AI/ML Engineering", "Full-Stack Development", "Research & Innovation"],
@@ -99,24 +92,11 @@ export const portfolioData = {
       image: "/images/projects/school-website.png",
       id: "school-website",
       name: "Modern School Hub Platform (SRJIC)",
-      description: "A responsive, SEO-optimized educational platform featuring decoupled interaction loops to ensure a 0ms Total Blocking Time (TBT) on the main thread.",
-      achievements: [
-        "3rd Place Winner: Ranked 3rd out of hundreds of peer competitors in a highly competitive coding battle among 3rd‑year students at VIT Chennai.",
-        "Hackathon Finalist: Secured a spot as a Top 20 Finalist at Hack Night ’25, an elite inter‑college hackathon championship."
-      ],
+      description: "A responsive educational platform engineered for search engine discoverability, optimized asset rendering distributions, and smooth micro-interactions.",
       tags: ["React", "Tailwind CSS", "Vercel", "SEO Optimization", "Framer Motion"],
       github: "https://github.com/vaibhavij20/srjic",
       live: "https://srjic.vercel.app",
-      pipeline: "Content Management System → SEO-Optimized Rendering → Vercel Edge Deployment",
-      metrics: {
-        mae: "98/100",  // Actual Production Lighthouse Performance Index
-        r2: "0.70s"     // Actual Document First Contentful Paint (FCP) Speed Tracker
-      },
-      architecture: [
-        "Engineered a responsive, SEO-optimized educational platform featuring decoupled interaction loops to ensure a 0ms Total Blocking Time (TBT) on the main thread.",
-        "Deployed a highly optimized asset rendering architecture via global edge middleware routing paths, resulting in a 0.70s First Contentful Paint (FCP).",
-        "Achieved a validated 98/100 production Lighthouse Performance Index for discoverability, access speeds, and mobile-first micro-interactions."
-      ]
+      pipeline: "Content Management System → SEO-Optimized Rendering → Vercel Edge Deployment"
     },
     {
       image: "/images/projects/ai-optimizer.png",
@@ -143,16 +123,22 @@ export const portfolioData = {
 
   certifications: [
     {
-      title: "IBM Watsonx AI Assistant",
-      issuer: "IBM",
+      title: "Network Addressing and Basic Troubleshooting",
+      issuer: "Cisco",
       date: "2024",
-      verify: "https://www.credly.com/badges/verify"
+      verify: "https://www.credly.com/badges/08a87cfd-9a0e-4074-bb8a-9a44ddc62910/public_url"
     },
     {
       title: "Full-Stack Web Development",
       issuer: "Udemy",
       date: "2024",
-      verify: "https://www.udemy.com/certificate"
+      verify: "https://www.udemy.com/certificate/UC-547f600f-3f02-4296-bb86-50c12e5775ed/"
+    },
+    {
+      title: "IBM AI & Data Science",
+      issuer: "IBM",
+      date: "2024",
+      verify: "https://courses.vit.skillsnetwork.site/certificates/423b734ac9e3448ebae4103e480ccc84"
     }
   ],
 

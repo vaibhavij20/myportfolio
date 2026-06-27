@@ -1,9 +1,50 @@
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Github, Linkedin, FileText, Terminal, Code } from 'lucide-react';
+import { Github, Linkedin, FileText, Terminal, Code, Cpu, FileText as FileIcon, Award } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
 export default function Hero() {
   const { hero } = portfolioData;
+  const [leetcodeStats, setLeetcodeStats] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 10000);
+
+    // Call Vercel serverless function or fallback to static data
+    const apiUrl = import.meta.env.PROD 
+      ? '/api/leetcode/vaibhavij20'
+      : 'http://localhost:3001/api/leetcode/vaibhavij20';
+
+    fetch(apiUrl, {
+      signal: controller.signal,
+    })
+      .then(res => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        return res.json();
+      })
+      .then(data => {
+        clearTimeout(timeoutId);
+        if (data.success && data.stats) {
+          setLeetcodeStats(data.stats);
+        }
+      })
+      .catch(err => {
+        clearTimeout(timeoutId);
+        console.error("Error fetching LeetCode metrics:", err);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
+
+    return () => {
+      clearTimeout(timeoutId);
+      controller.abort();
+    };
+  }, []);
+
+  const totalSolved = leetcodeStats ? leetcodeStats.find(d => d.difficulty === "All")?.count || leetcodeStats.reduce((sum, item) => sum + item.count, 0) : hero.metrics.find(m => m.label === "LeetCode Solved")?.value || "58+";
 
   // Animation variants
   const containerVariants = {
@@ -90,6 +131,43 @@ export default function Hero() {
             </a>
           </div>
         </motion.div>
+      </motion.div>
+
+      {/* Grid Stats Bar Component */}
+      <motion.div 
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.8, duration: 0.6 }}
+        className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-20 p-6 rounded-2xl bg-card border border-card-border backdrop-blur-md"
+      >
+        {hero.metrics.map((metric, index) => {
+          const iconMap = {
+            'code': Code,
+            'cpu': Cpu,
+            'file-text': FileIcon,
+            'award': Award
+          };
+          const Icon = iconMap[metric.icon] || Code;
+          const colorMap = {
+            'LeetCode Solved': 'text-accent',
+            'Active Systems': 'text-secondary',
+            'Research Papers': 'text-primary',
+            'Certifications': 'text-emerald-400'
+          };
+          const displayValue = metric.label === 'LeetCode Solved' 
+            ? (isLoading ? '...' : totalSolved) 
+            : metric.value;
+          return (
+            <div key={index} className="flex flex-col">
+              <span className={`text-3xl font-bold font-mono ${colorMap[metric.label] || 'text-accent'}`}>
+                {displayValue}
+              </span>
+              <span className="text-xs uppercase tracking-wider text-slate-500 font-medium mt-1">
+                {metric.label}
+              </span>
+            </div>
+          );
+        })}
       </motion.div>
     </section>
   );
