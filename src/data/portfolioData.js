@@ -10,7 +10,7 @@ export const portfolioData = {
       resume: "/Vaibhavi_Jaiswal_Resume.pdf"
     },
     metrics: [
-      { label: "LeetCode Solved", value: "58+", icon: "code" },
+      { label: "LeetCode Solved", value: "280+", icon: "code" },
       { label: "Active Systems", value: "6+", icon: "cpu" },
       { label: "Research Papers", value: "1", icon: "file-text" },
       { label: "Certifications", value: "3", icon: "award" }
@@ -59,10 +59,7 @@ export const portfolioData = {
       github: "https://github.com/vaibhavij20/repo-assistant",
       live: "https://repo-assistant-bphqhsvugxjhwggbwcqzrf.streamlit.app",
       pipeline: "Clone Repository → AST-aware Language Chunking → ChromaDB Embedding Index → MMR Retrieval Matrix",
-      architecture: [
-        "Developed a RAG-powered interactive codebase parser using language-aware Abstract Syntax Tree (AST) semantic chunking to capture deep technical contexts across complex external architectures.",
-        "Constructed an optimized retrieval matrix using Maximal Marginal Relevance (MMR) over vector space representations hosted natively in ChromaDB indexes."
-      ]
+      
     },
     {
       image: "/images/projects/nayepankh-management.png",
@@ -83,10 +80,7 @@ export const portfolioData = {
       github: "https://github.com/vaibhavij20",
       metrics: { mae: "5.54", r2: "0.93" },
       pipeline: "Satellite Imagery Ingestion → ViT Feature Extraction → Intensity Regression Model → Real-time Tracking Output",
-      architecture: [
-        "Co-architected an optimized Vision Transformer (ViT) configuration in a cross-functional team, evaluating spectral satellite telemetry matrices to minimize spatial variant error anomalies.",
-        "Collaborated on the training and tuning loops to achieve a structural vector intensity prediction accuracy of 93% R² score and an MAE of 5.54 during rigorous neural validation testing."
-      ]
+      
     },
     {
       image: "/images/projects/school-website.png",
@@ -105,11 +99,7 @@ export const portfolioData = {
       description: "A multi-agent system powered by LangGraph that profiles Python execution workflows inside an isolated Docker sandbox and iteratively optimizes algorithmic inefficiencies.",
       tags: ["LangGraph", "Docker", "Gemini API", "FAISS", "Python"],
       github: "https://github.com/vaibhavij20/codeoptimiser",
-      architecture: [
-        "Engineered a production multi-agent system utilizing LangGraph to build iterative code profiling and runtime optimization graphs.",
-        "Isolated code execution flows securely inside dynamically managed Docker sandboxes to map structural bottlenecks safely.",
-        "Integrated an automated semantic loop that cross-checks code targets against indexed software engineering design patterns to generate valid algorithmic optimizations verified by unit boundaries."
-      ]
+      pipeline: "Code Input → Static Analysis → Runtime Profiling → FAISS Retrieval → LangGraph Multi-Agent Optimization → Docker Sandbox Validation → Performance Report"
     }
   ],
 
@@ -135,7 +125,7 @@ export const portfolioData = {
       verify: "https://www.udemy.com/certificate/UC-547f600f-3f02-4296-bb86-50c12e5775ed/"
     },
     {
-      title: "IBM AI & Data Science",
+      title: "GEN AI Using IBM Watsonx",
       issuer: "IBM",
       date: "2024",
       verify: "https://courses.vit.skillsnetwork.site/certificates/423b734ac9e3448ebae4103e480ccc84"
@@ -150,7 +140,7 @@ export const portfolioData = {
   },
 
   contact: {
-    email: "vaibhavi.jaiswal2023@vitstudent.ac.in",
+    email: "vaibhavijaiswal2002@gmail.com",
     web3formsKey: "620631a2-3487-45d6-a8ae-952df2fd9f54"
   }
 };
