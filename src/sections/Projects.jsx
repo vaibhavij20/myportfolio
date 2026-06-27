@@ -14,7 +14,7 @@ export default function Projects() {
           Production Engineering Registers
         </h2>
         <p className="text-slate-400 max-w-xl text-sm">
-          Interactive display panels with live metrics, automated pipelines, and system blueprints.
+          Interactive display panels with live metrics and automated pipelines.
         </p>
       </div>
 
